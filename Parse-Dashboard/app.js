@@ -55,7 +55,7 @@ module.exports = function(config, options) {
   options = options || {};
   var app = express();
   // Serve public files.
-  app.use(express.static(path.join(__dirname,'public')));
+  app.use(express.static(path.join(__dirname,'public'), { redirect: false }));
 
   // Allow setting via middleware
   if (config.trustProxy && app.disabled('trust proxy')) {
